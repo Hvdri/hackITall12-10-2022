@@ -3,6 +3,54 @@
     padding: 0;
 }
 
+.progress-bar {
+    width: 25%;
+    background-color: rgb(48, 48, 181);
+    border-radius: 0.5rem;
+}
+
+.container {
+}
+
+.text1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: rgb(48, 48, 181);
+    margin: 0.5rem;
+}
+
+.row {
+    height: 6rem;
+    padding-top: 0.5rem;
+}
+
+.btn, .btn:active, .btn:visited {
+    font-size: 1.5rem;
+    background-color: white;
+    color: rgb(48, 48, 181);
+    border-radius: 1rem;
+}
+
+.btn {
+    min-width: 15rem;
+}
+
+.btn:hover {
+    background-color: rgb(67, 67, 244);
+    color: white;
+    transition: 0.25s;
+    transform: scale(1);
+}
+
+.link {
+    color: rgb(48, 48, 181);
+    text-decoration: none;
+    margin: -5rem;
+    min-width: 15rem;
+}
+
+
+
 .container-title {
 
 }
@@ -11,10 +59,6 @@
 
 }
 
-.btn button{
-    
-
-}
 
 button {
 
@@ -22,4 +66,8 @@ button {
 
 p, h1 {
 
+}
+
+.aria-pressed {
+    color: white!important;
 }

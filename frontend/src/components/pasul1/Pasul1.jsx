@@ -6,53 +6,128 @@ import '../../sharepages/navbar/Navbar';
 import Footer from '../../sharepages/footer/Footer';
 import Navbar from '../../sharepages/navbar/Navbar';
 
+import './Pasul1.css';
+
+
+import { useState } from 'react';
+// import axios from "axios";
+
 function Pasul1 (){
+
+  const [motiv, setMotiv] = useState('');
+  
+  let ofr = 'Operatiune fara numerar';
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    console.log(motiv);
+    // axios.get('http://localhost:5000/api/pasul1')
+    // .then(res => {
+    //   console.log(res);
+    //   setData(res.data);
+    // })
+    // .catch(err => {
+    //   console.log(err);
+    // })
+  }
+  
+  
+
+  
     return (
-      <div>
+      <div className='container '>
       <Navbar />
-      <div className='container-title'>
-        <h1>Welcome to Pasul 1!</h1>
-        <p>Alege un motiv pentru care programezi vizita in unitate</p>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <div class="d-flex align-items-center flex-column">
+        <div class="text1 p-3">Despre ce vrei sa vorbim?</div>
+        <div class="p-3">Alege unul dintre subiectele de mai jos, pentru care programezi vizita in unitate.</div>
       </div>
 
-      <div className='container' action='../../../backend/main.php'>
-        <div className='btn'>
-          <button className='btn btn-outline-primary' type='submit'>
-          {/* <button className='btn btn-outline-primary' type='submit'>
-          <button className='btn btn-outline-primary' type='submit'> */}
+      <div className='container col-align-items-center col-5'>
+        <div className='row'>
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
               Depunere sau retragere numerar
           </button>
         </div>
 
-        <div className='btn'>
-          <button className='btn btn-outline-primary' type='submit'>
+        <div className='row'>
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" 
+                  onClick={() => setMotiv(ofr)}
+                  name='name'
+          >
               Operatiune fara numerar
           </button>
         </div>
 
-        <div className='btn'>
-          <button className='btn btn-outline-primary' type='submit'>
+        <div className='row'>
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" > 
               Credit
           </button>
         </div>
 
-        <div className='btn'>
-          <button className='btn btn-outline-primary' type='submit'>
+        <div className='row'>
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
             Economisire
           </button>
         </div>
 
-        <div className='btn'>
-          <button className='btn btn-outline-primary' type='submit'>
+        <div className='row'>
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
             Asigurare
           </button>
         </div>
 
+      
+        <div className='row'>
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
+            Asigurare
+          </button>
+        </div>
+
+      
+        <div className='row'>
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
+            Asigurare
+          </button>
+        </div>
+
+      
+        <div className='row'>
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
+            Asigurare
+          </button>
+        </div>
+
+      
+        <div className='row'>
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
+            Asigurare
+          </button>
+        </div>
+
+      
+        <div className='row'>
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
+            Asigurare
+          </button>
+        </div>
+
+      
+        <div className='row'>
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
+            Asigurare
+          </button>
+        </div>
+
+      
+          <Link to="/Pasul2" className='link row mt-5'>
+          <button className='btn btn-secondary'>
+            Pasul urmator
+          </button>
+          </Link>
       </div>
-        
-        <li>
-          <Link to="/Pasul2">Continua</Link>
-        </li>
         <Footer />
     </div>
     );
