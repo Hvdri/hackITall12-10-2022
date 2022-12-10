@@ -1,8 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
 
-import '../../sharepages/footer/Footer';
-import '../../sharepages/navbar/Navbar';
 import Footer from '../../sharepages/footer/Footer';
 import Navbar from '../../sharepages/navbar/Navbar';
 
@@ -40,6 +38,7 @@ function Pasul1 (){
       <div class="progress">
         <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
+
       <div class="d-flex align-items-center flex-column">
         <div class="text1 p-3">Despre ce vrei sa vorbim?</div>
         <div class="p-3">Alege unul dintre subiectele de mai jos, pentru care programezi vizita in unitate.</div>
