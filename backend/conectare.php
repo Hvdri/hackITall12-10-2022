@@ -1,5 +1,5 @@
 <?php
-$db_name = "sucursale";
+$db_name = "appointments";
 $mysql_username = "root";
 $mysql_password = "";
 $server_name = "localhost";
