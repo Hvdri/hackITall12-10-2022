@@ -17,31 +17,33 @@ function Pasul1 (){
 
       <div className='container' action='../../../backend/main.php'>
         <div className='btn'>
-          <button className='btn' type='submit'>
+          <button className='btn btn-outline-primary' type='submit'>
+          {/* <button className='btn btn-outline-primary' type='submit'>
+          <button className='btn btn-outline-primary' type='submit'> */}
               Depunere sau retragere numerar
           </button>
         </div>
 
-        <div className='btn' type='submit'>
-          <button>
+        <div className='btn'>
+          <button className='btn btn-outline-primary' type='submit'>
               Operatiune fara numerar
           </button>
         </div>
 
-        <div className='btn' type='submit'>
-          <button>
+        <div className='btn'>
+          <button className='btn btn-outline-primary' type='submit'>
               Credit
           </button>
         </div>
 
-        <div className='btn' type='submit'>
-          <button>
+        <div className='btn'>
+          <button className='btn btn-outline-primary' type='submit'>
             Economisire
           </button>
         </div>
 
-        <div className='btn' type='submit'>
-          <button>
+        <div className='btn'>
+          <button className='btn btn-outline-primary' type='submit'>
             Asigurare
           </button>
         </div>
