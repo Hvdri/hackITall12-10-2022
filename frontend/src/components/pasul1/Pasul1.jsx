@@ -15,32 +15,32 @@ function Pasul1 (){
         <p>Alege un motiv pentru care programezi vizita in unitate</p>
       </div>
 
-      <div className='container'>
+      <div className='container' action='../../../backend/main.php'>
         <div className='btn'>
-          <button className='btn'>
+          <button className='btn' type='submit'>
               Depunere sau retragere numerar
           </button>
         </div>
 
-        <div className='btn'>
+        <div className='btn' type='submit'>
           <button>
               Operatiune fara numerar
           </button>
         </div>
 
-        <div className='btn'>
+        <div className='btn' type='submit'>
           <button>
               Credit
           </button>
         </div>
 
-        <div className='btn'>
+        <div className='btn' type='submit'>
           <button>
             Economisire
           </button>
         </div>
 
-        <div className='btn'>
+        <div className='btn' type='submit'>
           <button>
             Asigurare
           </button>
