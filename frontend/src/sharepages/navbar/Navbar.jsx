@@ -7,7 +7,7 @@ import './Navbar.css'
 function Navbar() {
   return (
 
-    <nav className="navbar fixed-top bg-light d-flex justify-content-between ">
+    <nav className="navbar fixed-top d-flex justify-content-between ">
         <div className="nav-item ">
             <a>
                 <IoIosArrowBack />
