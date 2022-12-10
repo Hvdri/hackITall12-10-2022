@@ -4,10 +4,10 @@
     
     font-size: x-large;
     font-weight: bold;
-    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 5rem;
     
 }
 
@@ -16,3 +16,11 @@ a {
     font-size: x-large;
 }
 
+.nav-item {
+    gap: 15rem;
+
+}
+
+img {
+    margin-left: 4.3rem;
+}
