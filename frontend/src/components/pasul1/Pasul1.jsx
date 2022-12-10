@@ -35,7 +35,7 @@ function Pasul1 (){
 
   
     return (
-      <div className='container '>
+      <div className='container pt-5'>
       <Navbar />
       <div class="progress">
         <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
