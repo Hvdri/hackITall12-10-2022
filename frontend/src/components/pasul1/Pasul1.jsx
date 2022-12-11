@@ -13,6 +13,11 @@ import { useState } from 'react';
 
 function Pasul1 (){
 
+  state = {
+    motiv: '',
+    
+  }
+
     const [dataMotiv, setDataMotiv] = useState("");
     const [result, setResult] = useState("");
   
@@ -30,10 +35,7 @@ function Pasul1 (){
         })
           .then(result => {
             console.log(result);
-            setResult({
-              mailSent: result.data.sent
-              
-            })
+            
           })
           .catch(error => setResult({ error: error.message }));
     };
