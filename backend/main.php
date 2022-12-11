@@ -7,6 +7,11 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 // ini_set("mail.add_x_header", TRUE);
 date_default_timezone_set('Europe/Bucharest');
 require_once 'conectare.php';
+header('Access-Control-Allow-Origin: *');
+
+header('Access-Control-Allow-Methods: GET, POST');
+
+header("Access-Control-Allow-Headers: X-Requested-With");
 
 $response = array();
 
