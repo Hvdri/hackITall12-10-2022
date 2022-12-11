@@ -19,7 +19,6 @@ function Pasul2(){
     const [JSON, setJSON] = useState("");
     const [result, setResult] = useState("");
   
-const call = () => {
     axios.get('http://localhost/hackITall12-10-2022/backend/main.php?apicall=Search')
     .then(function (response) {
       setJSON(response);
@@ -32,7 +31,6 @@ const call = () => {
     .finally(function () {
       console.log(JSON.stringify(JSON));
     });
-  }
     // const handleChange = (e) => {
     //   setDataMotiv(e.target.value);
     // };
@@ -53,7 +51,6 @@ const call = () => {
     // };
 
     return (
-      call(),
         <div className='container pt-5'>
         <Navbar />
         
