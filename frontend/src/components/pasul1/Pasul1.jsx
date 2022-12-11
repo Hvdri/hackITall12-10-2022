@@ -3,9 +3,9 @@ import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
 
 import Footer from '../../sharepages/footer/Footer';
 import Navbar from '../../sharepages/navbar/Navbar';
-import $ from "jquery";
+// import $ from "jquery";
 import './Pasul1.css';
-
+import axios from 'axios';
 import '../../App'
 
 import { useState } from 'react';
@@ -22,17 +22,18 @@ function Pasul1 (){
   
     const handleSumbit = (e) => {
         e.preventDefault();
-        const form = $(e.target);
-        $.ajax({
-            type: "POST",
-            url: form.attr("action"),
-            data: form.serialize(),
-            dataType: "json",
-            success(data) {
-              setResult(data);
-              console.log(data);
-            },
-        });
+        axios({
+          method: 'post',
+          url: `http://localhost/hackITall12-10-2022/backend/main.php?apicall=Motiv`,
+          headers: { 'content-type': 'application/json' },
+          data: result
+        })
+          .then(result => {
+            setResult({
+              mailSent: result.data.sent
+            })
+          })
+          .catch(error => setResult({ error: error.message }));
     };
   
   
@@ -53,7 +54,7 @@ function Pasul1 (){
           <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" 
           action="http://localhost/hackITall12-10-2022/backend/main.php?apicall=Motiv"
             method="post"
-            onClick={(event) => handleSumbit(event)}
+            onClick={(event) => handleChange(event)}
           >
               Depunere sau retragere numerar
           </button>
@@ -129,7 +130,10 @@ function Pasul1 (){
 
       
           <Link to="/Pasul2" className='link row mt-5'>
-          <button className='btn btn-secondary'>
+          <button className='btn btn-secondary'
+            method="post"
+            onClick={(event) => handleSumbit(event)}
+          >
             Pasul urmator
           </button>
           </Link>
