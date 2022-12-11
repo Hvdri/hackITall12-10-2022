@@ -22,10 +22,6 @@ import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
         {/* <li>
           <Link to="/">Home</Link>
         </li> */}
-
-        <li>
-          <Link to="/Pasul1">Pasul1</Link>
-        </li>
         
       </ul>
       <Routes>

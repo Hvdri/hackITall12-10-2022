@@ -35,7 +35,7 @@ function Pasul1 (){
             
         //   })
         axios.post('http://localhost/hackITall12-10-2022/backend/main.php?apicall=Motiv', {
-          motiv: 'pula'
+          dataMotiv: e.target.value
         })
         .then(function (response) {
           console.log(response);
@@ -139,20 +139,21 @@ function Pasul1 (){
           </button>
         </div>
 
-      
-          <Link to="/Pasul2" className='link row mt-5'>
-          <button className='btn btn-secondary'
-            method="post"
+          <div
             onClick={(event) => handleSumbit(event)}
+          
           >
+          <Link to="/Pasul2" className='link row mt-5'>
+          <button className='btn btn-primary'
+            >
             Pasul urmator
           </button>
           </Link>
+          </div>
       </div>
         <Footer />
     </div>
     );
-
 }
 
 export default Pasul1;

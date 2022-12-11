@@ -33,10 +33,7 @@ function Pasul2(){
     return (
         <div className='container pt-5'>
         <Navbar />
-        <div class="progress pro2">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-
-        </div>
+        
 
         <div class="d-flex align-items-center flex-column">
           <div class="text1 p-3">In ce locatie vrei sa ne vizitezi?</div>

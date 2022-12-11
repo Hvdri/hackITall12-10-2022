@@ -16,6 +16,7 @@ a {
 
 .nav-item {
     gap: 15rem;
+    cursor: pointer;
 }
 
 img {
