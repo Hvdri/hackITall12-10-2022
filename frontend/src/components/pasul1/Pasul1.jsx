@@ -17,7 +17,7 @@ function Pasul1 (){
     const [result, setResult] = useState("");
   
     const handleChange = (e) => {
-      setDataMotiv({m1: e.target.value});
+      setDataMotiv(e.target.value);
     };
   
     const handleSumbit = (e) => {
@@ -38,7 +38,7 @@ function Pasul1 (){
           .catch(error => setResult({ error: error.message }));
     };
   
-    const op1 = "Operatiune cu numerar";
+    let op1 = "Operatiune cu numerar";
   
 
   
@@ -53,8 +53,8 @@ function Pasul1 (){
 
       <div className='container col-align-items-center col-5'>
         <div className='row'>
-          <button id="m1" type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" 
-            value = {this.state.m1}
+          <button id="m1" type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false"  autoComplete="off" 
+            value = "pula"
             onClick={(value) => handleChange(value)}
           >
               {op1}
@@ -64,7 +64,7 @@ function Pasul1 (){
         </div>
 
         <div className='row'>
-          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" 
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false"  autoComplete="off" 
                   name='name'
           >
               Operatiune fara numerar
@@ -72,61 +72,61 @@ function Pasul1 (){
         </div>
 
         <div className='row'>
-          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" > 
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false"  autoComplete="off" > 
               Credit
           </button>
         </div>
 
         <div className='row'>
-          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false"  autoComplete="off" >
             Economisire
           </button>
         </div>
 
         <div className='row'>
-          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false"  autoComplete="off" >
             Asigurare
           </button>
         </div>
 
       
         <div className='row'>
-          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false"  autoComplete="off" >
             Asigurare
           </button>
         </div>
 
       
         <div className='row'>
-          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false"  autoComplete="off" >
             Asigurare
           </button>
         </div>
 
       
         <div className='row'>
-          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false"  autoComplete="off" >
             Asigurare
           </button>
         </div>
 
       
         <div className='row'>
-          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false"  autoComplete="off" >
             Asigurare
           </button>
         </div>
 
       
         <div className='row'>
-          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false"  autoComplete="off" >
             Asigurare
           </button>
         </div>
 
       
         <div className='row'>
-          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false"  autoComplete="off" >
             Asigurare
           </button>
         </div>
