@@ -23,13 +23,14 @@ function Pasul1 (){
     const handleSumbit = (e) => {
         e.preventDefault();
         axios({
-          method: 'post',
+          method: 'POST',
           url: `http://localhost/hackITall12-10-2022/backend/main.php?apicall=Motiv`,
-          headers: 'application/json',
-          data: this.result
+          headers: { 'Content-Type': 'application/json', },
+          data: result
         })
           .then(result => {
-            this.setResult({
+            console.log(result);
+            setResult({
               mailSent: result.data.sent
               
             })
