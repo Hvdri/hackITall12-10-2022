@@ -47,7 +47,7 @@ function Pasul2(){
           
           
               <form class="input-group mb-3 d-flex"
-                action="http://localhost:8000/server.php"
+                action="http://localhost/hackITall12-10-2022/backend/main.php?apicall=nume"
                 method="post"
                 onSubmit={(event) => handleSumbit(event)}
               >

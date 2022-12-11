@@ -13,11 +13,11 @@ import { useState } from 'react';
 
 function Pasul1 (){
 
-    const [name, setName] = useState("");
+    const [dataMotiv, setDataMotiv] = useState("");
     const [result, setResult] = useState("");
   
     const handleChange = (e) => {
-        setName(e.target.value);
+      setDataMotiv(e.target.value);
     };
   
     const handleSumbit = (e) => {
@@ -40,9 +40,6 @@ function Pasul1 (){
     return (
       <div className='container pt-5'>
       <Navbar />
-      <div class="progress">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-      </div>
 
       <div class="d-flex align-items-center flex-column">
         <div class="text1 p-3">Despre ce vrei sa vorbim?</div>
@@ -52,7 +49,7 @@ function Pasul1 (){
       <div className='container col-align-items-center col-5'>
         <div className='row'>
           <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" 
-          action="http://localhost:8000/server.php"
+          action="http://localhost/hackITall12-10-2022/backend/main.php?apicall=Motiv"
             method="post"
             onClick={(event) => handleSumbit(event)}
           >

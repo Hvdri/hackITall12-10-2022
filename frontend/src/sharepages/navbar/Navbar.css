@@ -1,8 +1,6 @@
 .navbar{
     /* background-color: #e9d7d7; */
     color: #3220ba;
-    -webkit-backdrop-filter: blur(9px);
-    backdrop-filter: blur(9px);
     font-size: x-large;
     font-weight: bold;
     display: flex;
