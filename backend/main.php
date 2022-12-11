@@ -9,9 +9,9 @@ date_default_timezone_set('Europe/Bucharest');
 require_once 'conectare.php';
 header('Access-Control-Allow-Origin: *');
 
-header('Access-Control-Allow-Methods: GET, POST');
+header('Access-Control-Allow-Methods: *');
 
-header("Access-Control-Allow-Headers: X-Requested-With");
+header("Access-Control-Allow-Headers: *");
 
 $response = array();
 
@@ -94,8 +94,37 @@ if (isset($_GET['apicall'])) {
             $response['mesaj'] = "Motivul a fost inserat cu succes";
             $response['idAppointment'] = $idAppointment;
             break;
+        case 'Search':
+            $cuvant = $obj["cuvant"];
+
+            $stmt = $conn->prepare("SELECT brn, street FROM branches INNER JOIN location ON branches.id_brn=location.id_brn WHERE UPPER(brn) LIKE UPPER('%$cuvant%') OR UPPER(street) LIKE UPPER('%$cuvant%')");
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if (!empty($result)) {
+                $locati = array();
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $locatie = array();
+                    $locatie["brn"] = $row["brn"];
+                    $locatie["street"] = $row["street"];
+                    var_dump($locatie);
+                    array_push($locati, $locatie);
+                }
+            }
+            var_dump($locati);
+            $response['locati'] = $locati;
+            break;
         case 'Locatie':
             $idAppointment = $obj["idAppointment"];
+            $idUnitate = $obj["idUnitate"];
+
+            $stmt = $conn->prepare("UPDATE userappointmentdata SET idUnitate = ? WHERE idAppointment = ?");
+            $stmt->bind_param("ss", $idUnitate, $idAppointment);
+            $stmt->execute();
+
+            $response['eroare'] = false;
+            $response['mesaj'] = "Locatie inserata cu succes";
+            $response['idAppointment'] = $idAppointment;
             break;
         case 'Data':
             // $idAppointment = $obj["idAppointment"];

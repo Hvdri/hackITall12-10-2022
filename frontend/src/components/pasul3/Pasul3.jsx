@@ -2,92 +2,20 @@ import React from 'react';
 import '../../App';
 import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
 import Navbar from '../../sharepages/navbar/Navbar';
-import Footer from '../../sharepages/footer/Footer';
 
 import './Pasul3.css';
+
 
 function Pasul3() {
     return (
         <div className='container pt-5'>
         <Navbar />
         <div class="d-flex align-items-center flex-column">
-          <div class="text1 p-3">Despre ce vrei sa vorbim?</div>
-          <div class="p-3">Alege unul dintre subiectele de mai jos, pentru care programezi vizita in unitate.</div>
+          <div class="text1 p-3">In ce zi vrei sa ne vizitezi?</div>
+          <div class="p-3">Alege data si intervalul orar pentru vizita la sucursala selectata.</div>
         </div>
   
-        <div className='container col-align-items-center col-5'>
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-                Depunere sau retragere numerar
-            </button>
-          </div>
-  
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" 
-            >
-                Operatiune fara numerar
-            </button>
-          </div>
-  
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" > 
-                Credit
-            </button>
-          </div>
-  
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Economisire
-            </button>
-          </div>
-  
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
-  
         
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
-  
-        
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
-  
-        
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
-  
-        
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
-  
-        
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
-  
-        
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
   
         
             <Link to="/Pasul4" className='link row mt-5'>
@@ -96,8 +24,6 @@ function Pasul3() {
             </button>
             </Link>
         </div>
-          <Footer />
-      </div>
       );
 }
 
