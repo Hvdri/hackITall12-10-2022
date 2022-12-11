@@ -3,31 +3,36 @@ import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
 
 import Footer from '../../sharepages/footer/Footer';
 import Navbar from '../../sharepages/navbar/Navbar';
-
+import $ from "jquery";
 import './Pasul1.css';
 
+import '../../App'
 
 import { useState } from 'react';
 // import axios from "axios";
 
 function Pasul1 (){
 
-  const [motiv, setMotiv] = useState('');
+    const [name, setName] = useState("");
+    const [result, setResult] = useState("");
   
-  let ofr = 'Operatiune fara numerar';
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    console.log(motiv);
-    // axios.get('http://localhost:5000/api/pasul1')
-    // .then(res => {
-    //   console.log(res);
-    //   setData(res.data);
-    // })
-    // .catch(err => {
-    //   console.log(err);
-    // })
-  }
+    const handleChange = (e) => {
+        setName(e.target.value);
+    };
+  
+    const handleSumbit = (e) => {
+        e.preventDefault();
+        const form = $(e.target);
+        $.ajax({
+            type: "POST",
+            url: form.attr("action"),
+            data: form.serialize(),
+            success(data) {
+                setResult(data);
+            },
+        });
+    };
+  
   
   
 
@@ -36,7 +41,7 @@ function Pasul1 (){
       <div className='container pt-5'>
       <Navbar />
       <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
 
       <div class="d-flex align-items-center flex-column">
@@ -46,14 +51,17 @@ function Pasul1 (){
 
       <div className='container col-align-items-center col-5'>
         <div className='row'>
-          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
+          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" 
+          action="http://localhost:8000/server.php"
+            method="post"
+            onClick={(event) => handleSumbit(event)}
+          >
               Depunere sau retragere numerar
           </button>
         </div>
 
         <div className='row'>
           <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" 
-                  onClick={() => setMotiv(ofr)}
                   name='name'
           >
               Operatiune fara numerar

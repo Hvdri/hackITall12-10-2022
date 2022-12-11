@@ -1,3 +1,12 @@
-.progress-bar2 {
+.pro2 {
     width: 28.5714285714%;
+}
+
+.btn {
+    border: 1px solid #e6e6e6;
+    border-radius: 1rem;
+}
+
+.span {
+    font-size: 10px;
 }
