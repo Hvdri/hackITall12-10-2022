@@ -15,9 +15,11 @@ function Pasul2(){
     axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
     axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
+
     const [JSON, setJSON] = useState("");
     const [result, setResult] = useState("");
   
+const call = () => {
     axios.get('http://localhost/hackITall12-10-2022/backend/main.php?apicall=Search')
     .then(function (response) {
       setJSON(response);
@@ -30,7 +32,7 @@ function Pasul2(){
     .finally(function () {
       console.log(JSON.stringify(JSON));
     });
-
+  }
     // const handleChange = (e) => {
     //   setDataMotiv(e.target.value);
     // };
@@ -51,6 +53,7 @@ function Pasul2(){
     // };
 
     return (
+      call(),
         <div className='container pt-5'>
         <Navbar />
         
@@ -69,7 +72,7 @@ function Pasul2(){
 
                 <div className=''>
                 <Autocomplete 
-                    suggestions={["Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District Of Columbia", "Federated States Of Micronesia", "Florida", "Georgia", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Marshall Islands", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Northern Mariana Islands", "Ohio", "Oklahoma", "Oregon", "Palau", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virgin Islands", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]}
+                    suggestions={JSON}
                     // onChange={(event) => handleChange(event)} 
                     />
                 <div
