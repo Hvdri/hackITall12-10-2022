@@ -27,6 +27,7 @@ function Pasul1 (){
             type: "POST",
             url: form.attr("action"),
             data: form.serialize(),
+            dataType: "json",
             success(data) {
               setResult(data);
               console.log(data);
