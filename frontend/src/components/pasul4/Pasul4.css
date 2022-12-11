@@ -1,3 +1,23 @@
-.progress {
-    width: 57.1428571429%;
+label{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #3220ba;
+    margin-bottom: 0.5em;
+    display: block;
+}
+.form-check{
+    font-size: 1.2em;
+    color: #000000;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+a{
+    font-size: 1.0em!important;
+    text-decoration: none;
+    color: #3220ba;
+    padding: 0;
+    font-size: 1.2em;
+
+    margin: 0;
 }

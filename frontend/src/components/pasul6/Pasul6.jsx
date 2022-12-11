@@ -2,95 +2,24 @@ import React from 'react';
 import '../../App';
 import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
 import Navbar from '../../sharepages/navbar/Navbar';
-import Footer from '../../sharepages/footer/Footer';
-
 import './Pasul6.css';
 
 function Pasul6() {
     return (
         <div className='container pt-5'>
         <Navbar />
-        <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
+        
         <div class="d-flex align-items-center flex-column">
-          <div class="text1 p-3">Despre ce vrei sa vorbim?</div>
-          <div class="p-3">Alege unul dintre subiectele de mai jos, pentru care programezi vizita in unitate.</div>
+          <div class="text1 p-3">Confirma numarul de telefon</div>
+          <div class="p-3">Introdu codul din 4 cifre primit prin SMS pe numarul 0712345678</div>
         </div>
   
         <div className='container col-align-items-center col-5'>
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-                Depunere sau retragere numerar
-            </button>
+        <label class="input custom-file-label" for="inputGroupFile02">Numar de telefon:</label>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="CNP" aria-describedby="inputGroup-sizing-default" placeholder='(ex: RO)+407xx xxx xxx'/>
           </div>
-  
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" 
-            >
-                Operatiune fara numerar
-            </button>
-          </div>
-  
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" > 
-                Credit
-            </button>
-          </div>
-  
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Economisire
-            </button>
-          </div>
-  
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
-  
-        
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
-  
-        
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
-  
-        
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
-  
-        
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
-  
-        
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
-  
-        
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
+          <p className='small' >Codul de verificare este valabil inca 4 minute 57 secunde </p>
   
         
             <Link to="/Pasul7" className='link row mt-5'>
@@ -99,7 +28,6 @@ function Pasul6() {
             </button>
             </Link>
         </div>
-          <Footer />
       </div>
       );
 }
