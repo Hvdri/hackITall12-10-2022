@@ -1,3 +1,10 @@
-.progress {
-    width: 71.4285714286%;
+
+
+.text{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
 }

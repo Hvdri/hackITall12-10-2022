@@ -2,7 +2,6 @@ import React from 'react';
 import '../../App';
 import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
 import Navbar from '../../sharepages/navbar/Navbar';
-import Footer from '../../sharepages/footer/Footer';
 
 import './Pasul5.css';
 
@@ -10,88 +9,22 @@ function Pasul5() {
     return (
         <div className='container pt-5'>
         <Navbar />
-        <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
+        
         <div class="d-flex align-items-center flex-column">
-          <div class="text1 p-3">Despre ce vrei sa vorbim?</div>
-          <div class="p-3">Alege unul dintre subiectele de mai jos, pentru care programezi vizita in unitate.</div>
+          <div class="text1 p-3 ">Avem nevoie de datele dumneavoastra de contact</div>
+          <div class="p-3">Pe datele furnizate it vom transmite informatiile pentru aceasta programare.</div>
         </div>
   
         <div className='container col-align-items-center col-5'>
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-                Depunere sau retragere numerar
-            </button>
+        <label class="input custom-file-label" for="inputGroupFile02">Adresa de e-mail:</label>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="CNP" aria-describedby="inputGroup-sizing-default" placeholder='nume@exemplu.ro'/>
           </div>
   
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" 
-            >
-                Operatiune fara numerar
-            </button>
+        <label class="input custom-file-label" for="inputGroupFile02">Numar de telefon:</label>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="CNP" aria-describedby="inputGroup-sizing-default" placeholder='(ex: RO)+407xx xxx xxx'/>
           </div>
-  
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" > 
-                Credit
-            </button>
-          </div>
-  
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Economisire
-            </button>
-          </div>
-  
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
-  
-        
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
-  
-        
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
-  
-        
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
-  
-        
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
-  
-        
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
-  
-        
-          <div className='row'>
-            <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Asigurare
-            </button>
-          </div>
-  
         
             <Link to="/Pasul6" className='link row mt-5'>
             <button className='btn btn-secondary'>
@@ -99,7 +32,6 @@ function Pasul5() {
             </button>
             </Link>
         </div>
-          <Footer />
       </div>
       );
 }
