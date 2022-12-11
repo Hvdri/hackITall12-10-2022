@@ -18,7 +18,7 @@ function Pasul3() {
         
   
         
-            <Link to="/Pasul4" className='link row mt-5'>
+            <Link to="/Pasul5" className='link row mt-5'>
             <button className='btn btn-secondary'>
               Pasul urmator
             </button>
