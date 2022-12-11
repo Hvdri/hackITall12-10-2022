@@ -35,7 +35,7 @@ function Pasul1 (){
             
         //   })
         axios.post('http://localhost/hackITall12-10-2022/backend/main.php?apicall=Motiv', {
-          dataMotiv: e.target.value
+          dataMotiv: dataMotiv
         })
         .then(function (response) {
           console.log(response);
