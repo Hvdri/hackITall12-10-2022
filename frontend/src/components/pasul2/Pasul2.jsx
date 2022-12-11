@@ -2,32 +2,39 @@ import React from 'react';
 import '../../App';
 import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
 import Navbar from '../../sharepages/navbar/Navbar';
-import Footer from '../../sharepages/footer/Footer';
-import $ from "jquery";
 import './Pasul2.css';
 import { useState } from 'react';
+import axios from 'axios';
 
+import Autocomplete from './Autocomplete';
 
 function Pasul2(){
-  const [name, setName] = useState("");
+
+  
+
+    axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
+    axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+
+    const [dataMotiv, setDataMotiv] = useState("");
     const [result, setResult] = useState("");
   
     const handleChange = (e) => {
-        setName(e.target.value);
+      setDataMotiv(e.target.value);
     };
   
     const handleSumbit = (e) => {
         e.preventDefault();
-        const form = $(e.target);
-        $.ajax({
-            type: "POST",
-            url: form.attr("action"),
-            data: form.serialize(),
-            success(data) {
-                setResult(data);
-                console.log(data);
-            },
-        });
+        
+        axios.post('http://localhost/hackITall12-10-2022/backend/main.php?apicall=Motiv', {
+          dataMotiv: dataMotiv
+        })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+        .catch(error => setResult({ error: error.message }));
     };
 
     return (
@@ -40,38 +47,27 @@ function Pasul2(){
           <div class="p-3">Cauta unitatea BCR unde programezi vizita dupa adresa, oras/sector sau nume unitate.</div>
         </div>
   
-        <div className='d-flex flex-column'>
+        <div className='d-flex justify-content-center'>
           
           
-              <form class="input-group mb-3 d-flex"
-                action="http://localhost/hackITall12-10-2022/backend/main.php?apicall=nume"
-                method="post"
-                onSubmit={(event) => handleSumbit(event)}
-              >
+              
               <div class="input-group-prepend d-flex">
-                <span class="input-group-text" id="basic-addon1">@</span>
+                <span class="input-group-text" id="basic-addon1">SEARCH</span>
               </div>
 
-                <label htmlFor="name"></label>
-                <input type="text"
-                    id="name"
-                    name="name"
-                    value={name}
-                    onChange={(event) => handleChange(event)} class="form-control" placeholder="Introdu adresa/orasul/sectorul sau numele unitatii" aria-label="Username" aria-describedby="basic-addon1"
+                <div className='d-flex'>
+                <Autocomplete 
+                    suggestions={["Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District Of Columbia", "Federated States Of Micronesia", "Florida", "Georgia", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Marshall Islands", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Northern Mariana Islands", "Ohio", "Oklahoma", "Oregon", "Palau", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virgin Islands", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]}
+                    onChange={(event) => handleChange(event)} 
                 />
                 <button className='btn btn-primary' type="submit">Submit</button>
-                </form>
+                </div>
                 <h1>{result}</h1>
           
         
-          <Link to="/Pasul3" className='d-flex justify-content-center'>
-            <button className='btn btn-secondary'>
-              Pasul urmator
-            </button>
-          </Link>
+  
 
         </div>
-          <Footer />
         </div>
       );
   
