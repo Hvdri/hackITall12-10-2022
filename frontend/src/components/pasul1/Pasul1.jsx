@@ -17,7 +17,7 @@ function Pasul1 (){
     const [result, setResult] = useState("");
   
     const handleChange = (e) => {
-      setDataMotiv(e.target.value);
+      setDataMotiv({m1: e.target.value});
     };
   
     const handleSumbit = (e) => {
@@ -53,10 +53,9 @@ function Pasul1 (){
 
       <div className='container col-align-items-center col-5'>
         <div className='row'>
-          <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" 
-          action="http://localhost/hackITall12-10-2022/backend/main.php?apicall=Motiv"
-            method="post"
-            onClick={(op1) => handleChange(op1)}
+          <button id="m1" type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" 
+            value = {this.state.m1}
+            onClick={(value) => handleChange(value)}
           >
               {op1}
               
