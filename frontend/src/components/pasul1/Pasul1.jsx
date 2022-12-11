@@ -6,6 +6,8 @@ import Navbar from '../../sharepages/navbar/Navbar';
 // import $ from "jquery";
 import './Pasul1.css';
 import axios from 'axios';
+axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 import '../../App'
 
 import { useState } from 'react';
