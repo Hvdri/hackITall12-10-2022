@@ -13,11 +13,6 @@ import { useState } from 'react';
 
 function Pasul1 (){
 
-  state = {
-    motiv: '',
-    
-  }
-
     const [dataMotiv, setDataMotiv] = useState("");
     const [result, setResult] = useState("");
   
@@ -27,17 +22,26 @@ function Pasul1 (){
   
     const handleSumbit = (e) => {
         e.preventDefault();
-        axios({
-          method: 'POST',
-          url: `http://localhost/hackITall12-10-2022/backend/main.php?apicall=Motiv`,
-          headers: { 'Content-Type': 'application/json', },
-          data: result
-        })
-          .then(result => {
-            console.log(result);
+        // axios({
+        //   method: 'POST',
+        //   url: `http://localhost/hackITall12-10-2022/backend/main.php?apicall=Motiv`,
+        //   headers: { 'Content-Type': 'application/json', },
+        //   data: result
+        // })
+        //   .then(result => {
+        //     console.log(result);
             
-          })
-          .catch(error => setResult({ error: error.message }));
+        //   })
+        axios.post('http://localhost/hackITall12-10-2022/backend/main.php?apicall=Motiv', {
+          motiv: 'pula'
+        })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+        .catch(error => setResult({ error: error.message }));
     };
   
     let op1 = "Operatiune cu numerar";
