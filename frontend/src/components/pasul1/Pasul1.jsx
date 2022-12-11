@@ -25,7 +25,7 @@ function Pasul1 (){
         axios({
           method: 'post',
           url: `http://localhost/hackITall12-10-2022/backend/main.php?apicall=Motiv`,
-          headers: { 'content-type': 'application/json' },
+          
           data: result
         })
           .then(result => {
