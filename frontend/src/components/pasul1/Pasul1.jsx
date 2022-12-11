@@ -38,7 +38,7 @@ function Pasul1 (){
           .catch(error => setResult({ error: error.message }));
     };
   
-  
+    const op1 = "Operatiune cu numerar";
   
 
   
@@ -56,9 +56,11 @@ function Pasul1 (){
           <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" 
           action="http://localhost/hackITall12-10-2022/backend/main.php?apicall=Motiv"
             method="post"
-            onClick={(event) => handleChange(event)}
+            onClick={(op1) => handleChange(op1)}
           >
-              Depunere sau retragere numerar
+              {op1}
+              
+
           </button>
         </div>
 
