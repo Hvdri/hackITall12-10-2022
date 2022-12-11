@@ -97,23 +97,22 @@ if (isset($_GET['apicall'])) {
         case 'Search':
             $cuvant = $obj["cuvant"];
 
-            $stmt = $conn->prepare("SELECT id_brn, brn, street FROM branches INNER JOIN location ON branches.id_brn=location.id_brn WHERE UPPER(brn) LIKE UPPER('%$cuvant%') OR UPPER(street) LIKE UPPER('%$cuvant%')");
-            // $stmt->bind_param("s", $cuvant);
+            $stmt = $conn->prepare("SELECT brn, street FROM branches INNER JOIN location ON branches.id_brn=location.id_brn WHERE UPPER(brn) LIKE UPPER('%$cuvant%') OR UPPER(street) LIKE UPPER('%$cuvant%')");
             $stmt->execute();
             $result = $stmt->get_result();
 
             if (!empty($result)) {
                 $locati = array();
-                while ($row = $result->fetch_assoc()) {
+                while ($row = mysqli_fetch_assoc($result)) {
                     $locatie = array();
-                    $locatie["id_brn"] = $row["id_brn"];
                     $locatie["brn"] = $row["brn"];
                     $locatie["street"] = $row["street"];
-
+                    var_dump($locatie);
                     array_push($locati, $locatie);
                 }
             }
-            $respone['locati'] = $locati;
+            var_dump($locati);
+            $response['locati'] = $locati;
             break;
         case 'Locatie':
             $idAppointment = $obj["idAppointment"];
