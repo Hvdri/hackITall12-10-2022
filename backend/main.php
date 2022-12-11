@@ -94,8 +94,38 @@ if (isset($_GET['apicall'])) {
             $response['mesaj'] = "Motivul a fost inserat cu succes";
             $response['idAppointment'] = $idAppointment;
             break;
+        case 'Search':
+            $cuvant = $obj["cuvant"];
+
+            $stmt = $conn->prepare("SELECT id_brn, brn, street FROM branches INNER JOIN location ON branches.id_brn=location.id_brn WHERE UPPER(brn) LIKE UPPER('%$cuvant%') OR UPPER(street) LIKE UPPER('%$cuvant%')");
+            // $stmt->bind_param("s", $cuvant);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if (!empty($result)) {
+                $locati = array();
+                while ($row = $result->fetch_assoc()) {
+                    $locatie = array();
+                    $locatie["id_brn"] = $row["id_brn"];
+                    $locatie["brn"] = $row["brn"];
+                    $locatie["street"] = $row["street"];
+
+                    array_push($locati, $locatie);
+                }
+            }
+            $respone['locati'] = $locati;
+            break;
         case 'Locatie':
             $idAppointment = $obj["idAppointment"];
+            $idUnitate = $obj["idUnitate"];
+
+            $stmt = $conn->prepare("UPDATE userappointmentdata SET idUnitate = ? WHERE idAppointment = ?");
+            $stmt->bind_param("ss", $idUnitate, $idAppointment);
+            $stmt->execute();
+
+            $response['eroare'] = false;
+            $response['mesaj'] = "Locatie inserata cu succes";
+            $response['idAppointment'] = $idAppointment;
             break;
         case 'Data':
             // $idAppointment = $obj["idAppointment"];
