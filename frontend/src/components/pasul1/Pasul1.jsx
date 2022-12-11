@@ -25,12 +25,13 @@ function Pasul1 (){
         axios({
           method: 'post',
           url: `http://localhost/hackITall12-10-2022/backend/main.php?apicall=Motiv`,
-          
-          data: result
+          headers: 'application/json',
+          data: this.result
         })
           .then(result => {
-            setResult({
+            this.setResult({
               mailSent: result.data.sent
+              
             })
           })
           .catch(error => setResult({ error: error.message }));
