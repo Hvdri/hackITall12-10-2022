@@ -51,17 +51,26 @@ function Pasul2(){
           
           
               
-              <div class="input-group-prepend d-flex">
+              <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">SEARCH</span>
-              </div>
 
-                <div className='d-flex'>
+                <div className=''>
                 <Autocomplete 
                     suggestions={["Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District Of Columbia", "Federated States Of Micronesia", "Florida", "Georgia", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Marshall Islands", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Northern Mariana Islands", "Ohio", "Oklahoma", "Oregon", "Palau", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virgin Islands", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]}
                     onChange={(event) => handleChange(event)} 
-                />
-                <button className='btn btn-primary' type="submit">Submit</button>
-                </div>
+                    />
+                <div
+            onClick={(event) => handleSumbit(event)}
+          
+          >
+          <Link to="/Pasul3" className='link row mt-5'>
+            <button className='btn btn-primary'>
+            Pasul urmator
+            </button>
+          </Link>
+          </div>
+          </div>
+          </div>
                 <h1>{result}</h1>
           
         

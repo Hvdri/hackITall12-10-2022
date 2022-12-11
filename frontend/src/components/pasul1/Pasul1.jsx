@@ -1,7 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
-
-import Footer from '../../sharepages/footer/Footer';
 import Navbar from '../../sharepages/navbar/Navbar';
 // import $ from "jquery";
 import './Pasul1.css';
@@ -212,7 +210,6 @@ function Pasul1 (){
           </Link>
           </div>
       </div>
-        <Footer />
     </div>
     );
 }
