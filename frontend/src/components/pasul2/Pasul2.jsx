@@ -15,27 +15,40 @@ function Pasul2(){
     axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
     axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
-    const [dataMotiv, setDataMotiv] = useState("");
+    const [JSON, setJSON] = useState("");
     const [result, setResult] = useState("");
   
-    const handleChange = (e) => {
-      setDataMotiv(e.target.value);
-    };
+    axios.get('http://localhost/hackITall12-10-2022/backend/main.php?apicall=Search')
+    .then(function (response) {
+      setJSON(e.target.value);
+      console.log(response);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .finally(function () {
+      console.log(JSON.stringify(JSON));
+    });
+
+    // const handleChange = (e) => {
+    //   setDataMotiv(e.target.value);
+    // };
   
-    const handleSumbit = (e) => {
-        e.preventDefault();
+    // const handleSumbit = (e) => {
+    //     e.preventDefault();
         
-        axios.post('http://localhost/hackITall12-10-2022/backend/main.php?apicall=Motiv', {
-          dataMotiv: dataMotiv
-        })
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        })
-        .catch(error => setResult({ error: error.message }));
-    };
+    //     axios.post('http://localhost/hackITall12-10-2022/backend/main.php?apicall=Motiv', {
+    //       dataMotiv: dataMotiv
+    //     })
+    //     .then(function (response) {
+    //       console.log(response);
+    //     })
+    //     .catch(function (error) {
+    //       console.log(error);
+    //     })
+    //     .catch(error => setResult({ error: error.message }));
+    // };
 
     return (
         <div className='container pt-5'>
