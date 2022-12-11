@@ -28,7 +28,8 @@ function Pasul1 (){
             url: form.attr("action"),
             data: form.serialize(),
             success(data) {
-                setResult(data);
+              setResult(data);
+              console.log(data);
             },
         });
     };
