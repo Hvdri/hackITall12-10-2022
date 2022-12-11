@@ -20,7 +20,7 @@ function Pasul2(){
   
     axios.get('http://localhost/hackITall12-10-2022/backend/main.php?apicall=Search')
     .then(function (response) {
-      setJSON(e.target.value);
+      setJSON(response);
       console.log(response);
     })
     .catch(function (error) {
@@ -70,10 +70,10 @@ function Pasul2(){
                 <div className=''>
                 <Autocomplete 
                     suggestions={["Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District Of Columbia", "Federated States Of Micronesia", "Florida", "Georgia", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Marshall Islands", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Northern Mariana Islands", "Ohio", "Oklahoma", "Oregon", "Palau", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virgin Islands", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]}
-                    onChange={(event) => handleChange(event)} 
+                    // onChange={(event) => handleChange(event)} 
                     />
                 <div
-            onClick={(event) => handleSumbit(event)}
+            // onClick={(event) => handleSumbit(event)}
           
           >
           <Link to="/Pasul3" className='link row mt-5'>
